@@ -1,0 +1,234 @@
+/* Global Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fffaf0; /* Warna Off White */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #faf0e6; /* Warna Linen */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar .profile h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #5c4033;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 12px;
+    color: #5c4033;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sidebar .menu li.active,
+.sidebar .menu li:hover {
+    color: #cd853f; /* Warna Peru */
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    background-color: #fffaf0; /* Warna Off White */
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.header .search-bar input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #d2b48c; /* Warna Tan */
+    width: 300px;
+    background-color: #fffaf0;
+}
+
+.header-icons i {
+    font-size: 20px;
+    color: #5c4033;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.header-icons i:hover {
+    color: #cd853f; /* Warna Peru */
+}
+
+/* Timeline Section */
+.timeline {
+    background-color: #faf0e6; /* Warna Linen */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Spasi bawah */
+}
+
+.timeline h2 {
+    font-size: 22px;
+    color: #5c4033;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Judul di tengah */
+}
+
+.timeline ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline ul li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #5c4033;
+    border: 1px solid #d2b48c; /* Border tipis */
+    padding: 10px 15px; /* Padding dalam item */
+    border-radius: 10px; /* Sudut melengkung */
+    background-color: #fffaf0; /* Warna background Off White */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.timeline ul li:hover {
+    background-color: #fff0d5; /* Efek hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline ul li i {
+    font-size: 18px;
+    color: #cd853f; /* Warna Peru */
+}
+
+/* Recently Accessed Items */
+.recent-items {
+    background-color: #faf0e6; /* Warna Linen */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recent-items h2 {
+    font-size: 22px;
+    color: #5c4033;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Judul di tengah */
+}
+
+.recent-items ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-items ul li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: #5c4033;
+    margin-bottom: 12px;
+    border: 1px solid #d2b48c; /* Border tipis */
+    padding: 10px 15px;
+    border-radius: 10px; /* Sudut melengkung */
+    background-color: #fffaf0; /* Warna background Off White */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.recent-items ul li:hover {
+    background-color: #fff0d5; /* Efek hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .header .search-bar input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+}
